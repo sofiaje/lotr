@@ -17,9 +17,7 @@ const characters = () => {
 
     const handleRadioBtnChange = (e) => {
         setGender(e.target.value)
-        console.log(e.target.value)
     }
-
     const filteredCharacters = filterCharacters(char, userInput, gender)
     const {characterPerPage, pagesVisited, pageCount, changePage} = paginate(filteredCharacters)
        

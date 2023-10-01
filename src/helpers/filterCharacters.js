@@ -1,5 +1,5 @@
 export const filterCharacters = (array, userInput, gender) => {
-    const filteredCharacters = array?.filter(x => {
+    const newArray = array?.filter(x => {
         if (userInput === "") {
             return true
         }
@@ -8,6 +8,21 @@ export const filterCharacters = (array, userInput, gender) => {
         }
         return false
     })
+
+    if (gender === "all") {
+        return newArray
+    }
+
+    const filteredCharacters = newArray?.filter(x => {
+        
+        if (x?.gender?.toLowerCase() === gender) {
+            return true
+        }
+        else {
+            return false
+        }
+    })
+    
     return filteredCharacters
 }
  
