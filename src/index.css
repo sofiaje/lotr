@@ -6,13 +6,7 @@
 
 
 :root {
-  line-height: 1.5;
-  font-weight: 400;
-
   background-color: #e4e4e4;
   color: #494949;
 }
 
-.pagActive {
-  text-decoration: underline;
-}

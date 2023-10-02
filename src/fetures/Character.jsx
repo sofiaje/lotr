@@ -4,7 +4,7 @@ const Character = ({ data }) => {
         return
     }
     return ( 
-        <li className='p-4 my-4 max-w-md rounded-lg bg-white drop-shadow-lg' key={_id}>
+        <li className='p-4 my-4 rounded-lg bg-white drop-shadow-lg' key={_id}>
             <h2 className="text-3xl font-lord">{name}</h2>
             <p>{(race && race !== "NaN")  && `Race: ${race}`}</p>
             <p>{(gender && race !== "NaN")  && `Gender: ${gender}`}</p>

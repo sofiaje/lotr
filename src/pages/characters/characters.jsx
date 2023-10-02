@@ -36,15 +36,15 @@ const characters = () => {
     const radioOpt = radioOptionRace()
 
     return (
-        <div>
-            <div className="flex flex-col items-start gap-1">
+        <div className="max-w-lg">
+            <div className="flex flex-col items-start gap-1 my-4">
                 <input id="inputName" placeholder="name of character" className="p-2 border rounded-md" type="text" onChange={(e) => { handleOnChange(e, setUserInput) }} />
+                <select onChange={(e) => { handleOnChange(e, setRace) }} className="p-1 border-r-4 rounded-md border-white" name="race" id="race">
+                    {radioOpt}
+                </select>
                 <div id="radioContainer" className="flex gap-2">
                     {radioOption}
                 </div>
-                <select onChange={(e) => { handleOnChange(e, setRace) }} name="race" id="race">
-                    {radioOpt}
-                </select>
             </div>
             <ul className="gap-3">
                 {displayCharacters}
@@ -58,6 +58,7 @@ const characters = () => {
                 containerClassName={"flex gap-2"}
                 activeClassName={"underline"}
             />
+            
         </div>
     )
 }

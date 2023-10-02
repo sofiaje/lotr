@@ -3,7 +3,7 @@ import axios from "axios"
 const config = {
     headers: {
         Accept: 'application/json',
-        Authorization: 'Bearer TcF6uwe5wriaVfspHyDE'
+        Authorization: `Bearer ${import.meta.env.VITE_AUTH_KEY}`
     }
 }
 
