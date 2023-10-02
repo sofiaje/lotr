@@ -8,6 +8,7 @@ import radioOptionsGender from "../../helpers/radioOptionGender"
 import radioOptionRace from "../../helpers/radioOptionRace"
 
 const characters = () => {
+    const [pageNumber, setPageNumber] = useState(0)
     const [userInput, setUserInput] = useState("")
     const [gender, setGender] = useState("all")
     const [race, setRace] = useState("all")
@@ -21,10 +22,10 @@ const characters = () => {
     }
 
     // filter array according to user input
-    const filteredCharacters = filterCharacters(char, userInput, gender, race)
+    const filteredCharacters = filterCharacters(char, userInput, gender, race, setPageNumber)
 
     // creates variables for ReactPaginate
-    const {characterPerPage, pagesVisited, pageCount, changePage} = paginate(filteredCharacters)
+    const {characterPerPage, pagesVisited, pageCount, changePage} = paginate(filteredCharacters, pageNumber, setPageNumber)
        
     // creates a new array of characters according to pagenumber in paginate 
     const displayCharacters = filteredCharacters?.slice(pagesVisited, pagesVisited + characterPerPage).map((character) => {
@@ -47,7 +48,7 @@ const characters = () => {
                 </div>
             </div>
             <ul className="gap-3">
-                {displayCharacters}
+                {displayCharacters?.length > 0 ? displayCharacters : <p className="py-2 font-semibold">There are no characters that meet the search criteria</p>}
             </ul>
 
             <ReactPaginate

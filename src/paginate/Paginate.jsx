@@ -1,9 +1,5 @@
-import { useState } from "react";
+const paginate = (array, pageNumber, setPageNumber) => {
 
-
-const paginate = (array) => {
-
-    const [pageNumber, setPageNumber] = useState(0)
     const characterPerPage = 10
     const pagesVisited = pageNumber * characterPerPage
     const pageCount = Math.ceil(array?.length / characterPerPage)
@@ -13,7 +9,7 @@ const paginate = (array) => {
     }
 
 
-    return {pageNumber, setPageNumber, characterPerPage, pagesVisited, pageCount, changePage};
+    return {characterPerPage, pagesVisited, pageCount, changePage};
 }
  
 export default paginate;
