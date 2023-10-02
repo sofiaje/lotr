@@ -32,7 +32,7 @@ const characters = () => {
         return <Character data={character} key={character._id} />
     })
 
-    // map out options for gender and race
+    // map out options for gender and race and save in variable
     const radioOption = radioOptionsGender(handleOnChange, setGender)
     const radioOpt = radioOptionRace()
 
