@@ -17,8 +17,11 @@ export const filterCharacters = (array, userInput, gender, race) => {
     const filteredCharacters = genderMatches?.filter(x => {
         if (race === "all" || x?.race?.toLowerCase() === race) {
             return true
-        }
-        else {
+        } else if (race === "orcs" && x?.race?.toLowerCase() === "orc") {
+            return true
+        } else if (race === "eagle" && (x?.race?.toLowerCase() === "eagles" || x?.race?.toLowerCase() === "great eagles")) {
+            return true
+        }else {
             return false
         }
     })

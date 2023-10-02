@@ -8,11 +8,11 @@ const Character = ({ data }) => {
                 <h2 className="text-3xl font-lord">{name}</h2>
                 <p>{(race && race !== "NaN")  && `Race: ${race}`}</p>
                 <p>{(gender && race !== "NaN")  && `Gender: ${gender}`}</p>
-                <p>{(birth && birth !== "NaN")  && `birth: ${birth}`}</p>
-                <p>{(death && death !== "NaN")  && `death: ${death}`}</p>
-                <p>{(height && height !== "NaN")  && `height: ${height}`}</p>
-                <p>{(realm && realm !== "NaN")  && `realm: ${realm}`}</p>
-                <p>{(spouse && spouse !== "NaN")  && `spouse: ${spouse}`}</p>
+                <p>{(birth && birth !== "NaN")  && `Birth: ${birth}`}</p>
+                <p>{(death && death !== "NaN")  && `Death: ${death}`}</p>
+                <p>{(height && height !== "NaN")  && `Height: ${height}`}</p>
+                <p>{(realm && realm !== "NaN")  && `Realm: ${realm}`}</p>
+                <p>{(spouse && spouse !== "NaN")  && `Spouse: ${spouse}`}</p>
 
         </div>
 
