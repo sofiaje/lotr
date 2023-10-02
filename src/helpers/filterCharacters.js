@@ -1,28 +1,28 @@
-export const filterCharacters = (array, userInput, gender) => {
-    const newArray = array?.filter(x => {
-        if (userInput === "") {
-            return true
-        }
-        if (x.name.toLowerCase().includes(userInput)) {
+export const filterCharacters = (array, userInput, gender, race) => {
+
+    const nameMatches = array?.filter(x => {
+        if (userInput === "" || x.name.toLowerCase().includes(userInput)) {
             return true
         }
         return false
     })
 
-    if (gender === "all") {
-        return newArray
-    }
+    const genderMatches = nameMatches?.filter(x => {
+        if (gender === "all" || x?.gender?.toLowerCase() === gender) {
+            return true
+        }
+        return false
+    })
 
-    const filteredCharacters = newArray?.filter(x => {
-        
-        if (x?.gender?.toLowerCase() === gender) {
+    const filteredCharacters = genderMatches?.filter(x => {
+        if (race === "all" || x?.race?.toLowerCase() === race) {
             return true
         }
         else {
             return false
         }
     })
-    
+
     return filteredCharacters
 }
  

@@ -7,10 +7,13 @@ const getData = () => {
         queryFn: getCharacter,
     });
 
+    // figure out how to fix error handling
     if (isLoading) {
         return <h1>Loading..</h1>
     }
-    if (isError) return <pre>{JSON.stringify(error)}</pre>
+    if (isError) {
+        return <pre>{JSON.stringify(error)}</pre>
+    }
 
     const { docs: char } = data
 
