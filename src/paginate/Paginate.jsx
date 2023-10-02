@@ -1,6 +1,6 @@
 const paginate = (array, pageNumber, setPageNumber) => {
 
-    const characterPerPage = 10
+    const characterPerPage = 12
     const pagesVisited = pageNumber * characterPerPage
     const pageCount = Math.ceil(array?.length / characterPerPage)
 

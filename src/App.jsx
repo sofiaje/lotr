@@ -9,9 +9,9 @@ import Footer from './Components/Footer'
 function App() {
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col h-screen items-center text-white">
       <Header />
-      <main className='flex flex-col grow p-4'>
+      <main className='flex flex-col grow p-4 w-full max-w-7xl'>
         <Characters />
       </main>
       <Footer />
